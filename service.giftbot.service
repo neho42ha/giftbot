@@ -1,0 +1,15 @@
+[Unit]
+Description=Telegram Gift Listener (Pyrogram)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/giftbot
+ExecStart=/usr/bin/python3 /opt/giftbot/gift_listener.py
+Restart=always
+RestartSec=5
+User=giftbot
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
